@@ -6,10 +6,10 @@ This repository's aim is to showcase a simple example of multithreading in Java 
 
 Multithreading is a technique that allows multiple threads to run concurrently within a single process. This can lead to more efficient use of resources and improved performance in certain types of applications.
 
-## Using
+## Usage
 
 ```bash
-git clone https://github.com/yourusername/multithreading.git
+git clone https://github.com/norbertcygiert/multithreading.git
 
 cd multithreading
 ```
