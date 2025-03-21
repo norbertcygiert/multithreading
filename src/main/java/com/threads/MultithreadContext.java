@@ -10,7 +10,7 @@ public class MultithreadContext {
     MultithreadContext(){
         list.addAll(Arrays.asList(0));
     };
-    
+    //Creating the context for a few to threads to run concurrently in
     public static void CreateContext(){
         Thread t1 = new Thread(new WritingThread(list, 1));
         Thread t2 = new Thread(new WritingThread(list, 2));

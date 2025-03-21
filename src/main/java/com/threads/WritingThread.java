@@ -21,15 +21,18 @@ public class WritingThread implements Runnable {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+            // synchronized keyword used by Collections.synchronizedList to avoid ConcurrentModificationException
             synchronized (listToModify) {
                 if (listToModify.size() >= 100) {
+                    //Ending the threads work when list size exceeds 100
                     Thread.currentThread().interrupt();
                     System.out.println("Array size exceeded: interrupting (Thread ID: " + this.threadID + ")");
                     return;
                 }
                 listToModify.add(threadID);
-                System.out.println("\033c");
-                System.out.println(listToModify + "   Writing Thread ID: " + this.threadID);
+                //Showing which thread has last modified the list and how does it currently look like
+                System.out.println("\033c" + "Writing Thread ID: " + this.threadID);
+                System.out.println("\n" + listToModify);
             }
         }
     }
